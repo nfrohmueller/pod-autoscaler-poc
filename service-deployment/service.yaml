@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: podscaler-service
+  namespace: omm
+spec:
+  type: LoadBalancer
+  selector:
+    app: podscaler-service
+  ports:
+    - port: 3149
+      targetPort: 3149

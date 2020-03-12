@@ -1,0 +1,8 @@
+server:
+  port: 3149
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

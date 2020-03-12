@@ -1,0 +1,25 @@
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: podscaler-service-hpa
+  namespace: omm
+  annotations:
+    # metric-config.<metricType>.<metricName>.<collectorName>/<configKey>
+    metric-config.pods.requests-per-second.json-path/json-key: "$./test"
+    metric-config.pods.requests-per-second.json-path/path: /actuator/avgRequests
+    metric-config.pods.requests-per-second.json-path/port: "3149"
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: podscaler-service
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+    - type: Pods
+      pods:
+        metric:
+          name: requests-per-second
+        target:
+          averageValue: 10
+          type: AverageValue

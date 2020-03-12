@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: podscaler-service
+  namespace: omm
+  labels:
+    app: podscaler-service
+spec:
+  selector:
+    matchLabels:
+      app: podscaler-service
+  template:
+    metadata:
+      labels:
+        app: podscaler-service
+    spec:
+      containers:
+        - name: podscaler-service
+          image: test/podscaling:0.0.1
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 3149
