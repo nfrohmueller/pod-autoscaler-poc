@@ -34,7 +34,7 @@ Das gesamte Scenario lässt sich auf Kubernetes for Docker durchführen.
 Nach einiger Zeit sieht man, wie die Pods mit steigenden Requestzahlen hochscaliert werden.
 
 ## Cleanup
-Um alle Kompenenten auzs K8s wieder zu entfernen, einfach `./undeploy.sh` ausführen.
+Um alle Kompenenten aus K8s wieder zu entfernen, einfach `./undeploy.sh` ausführen.
 
 ## Was brauchen wir für den Livebetrieb?
 Alles, was man benötigt und uns von Quokka zur Verfügung gestellt werden müsste, findet man im Ordner 'metrics-adapter-deployment'. Die darin enthaltenen Files habe ich 1:1 von Zalando übernommen.
