@@ -22,5 +22,5 @@ spec:
         metric:
           name: requests-per-second
         target:
-          averageValue: '50'
+          averageValue: '10'
           type: AverageValue

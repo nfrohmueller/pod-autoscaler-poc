@@ -23,7 +23,7 @@ import static java.util.stream.Collectors.groupingBy;
 @Slf4j
 public class CustomMeterRegistry extends StepMeterRegistry {
     private final ConcurrentMap<String, Double> currentValues = new ConcurrentHashMap<>();
-    private final ObjectMapper mapper = new ObjectMapper();
+//    private final ObjectMapper mapper = new ObjectMapper();
     private final long stepSeconds;
 
     public CustomMeterRegistry(CustomRegistryConfig config, Clock clock) {
@@ -47,11 +47,11 @@ public class CustomMeterRegistry extends StepMeterRegistry {
         currentValues.clear();
         if (!collect.isEmpty()) {
             currentValues.putAll(collect);
-            try {
-                log.info(mapper.writeValueAsString(collect));
-            } catch (JsonProcessingException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                log.info(mapper.writeValueAsString(collect));
+//            } catch (JsonProcessingException e) {
+//                e.printStackTrace();
+//            }
         }
     }
 
