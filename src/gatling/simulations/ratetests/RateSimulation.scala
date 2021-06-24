@@ -12,7 +12,7 @@ class RateSimulation extends Simulation {
 
   setUp(
     scn.inject(
-      rampUsersPerSec (1) to 100 during (2 minutes)
+      rampUsersPerSec (1) to 300 during (3 minutes)
     )
   ).protocols(httpProtocoll)
 }

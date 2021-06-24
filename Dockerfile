@@ -1,4 +1,4 @@
-FROM docker-registry.rewe-digital.com/rewe-debian-openjdk:11.latest
+FROM eu.gcr.io/rd-bigdata-ops-v002/rewe-debian-openjdk:11.latest
 MAINTAINER Big Data Sparks <dev-team-sparks@rewe-digital.com>
 
 ARG JAR_FILE=podscaling-0.0.1-SNAPSHOT.jar

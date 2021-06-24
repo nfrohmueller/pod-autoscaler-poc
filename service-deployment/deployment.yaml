@@ -20,3 +20,16 @@ spec:
           imagePullPolicy: Never
           ports:
             - containerPort: 3149
+          livenessProbe:
+            initialDelaySeconds: 15
+            periodSeconds: 10
+            failureThreshold: 20
+            httpGet:
+              path: /actuator/health
+              port: 3149
+          readinessProbe:
+            initialDelaySeconds: 3
+            periodSeconds: 3
+            httpGet:
+              path: /actuator/health
+              port: 3149
